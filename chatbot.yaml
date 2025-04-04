@@ -1,0 +1,12 @@
+name: faq-bot
+
+entryPoint: main.sc
+
+botEngine: v2
+language: ru
+
+
+nlp:
+  intentNoMatchThresholds:
+    phrases: 0.2
+    patterns: 0.2
