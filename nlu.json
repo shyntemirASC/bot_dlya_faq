@@ -1,13 +1,13 @@
 {
   "project" : {
-    "id" : "bot_dlya_faq-1000013-ytj",
-    "name" : "bot_dlya_faq-1000013-ytj",
+    "id" : "bot_dlya_faq-1000013-sFI",
+    "name" : "bot_dlya_faq-1000013-sFI",
     "folder" : "/platform"
   },
   "settings" : {
     "language" : "ru",
     "spellingCorrection" : false,
-    "classificationAlgorithm" : "transformer",
+    "classificationAlgorithm" : "deeplearning",
     "timezone" : "UTC+05:00",
     "extendedSettings" : {
       "classificationAlgorithmVersion" : 1.0,
@@ -61,21 +61,13 @@
     "phrases" : [ {
       "text" : "хочу узнать про бота"
     }, {
-      "text" : "хоч узнать про бота"
-    }, {
-      "text" : "хочу узнат про бот"
-    }, {
-      "text" : "хочу узнат про бота"
-    }, {
-      "text" : "хочу узнат о бот"
-    }, {
-      "text" : "хочу знать о бот"
-    }, {
-      "text" : "хочу узнать о бот"
-    }, {
       "text" : "расскажи о боте"
     }, {
       "text" : "информация о боте"
+    }, {
+      "text" : "расскажи о инаре"
+    }, {
+      "text" : "инара бот"
     } ],
     "classificationRules" : {
       "refs" : [ ]

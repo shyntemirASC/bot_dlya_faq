@@ -1,26 +1,26 @@
 theme: /Alseco
     
     state: InitialState
-        a: Чего конкретно хотите узнать о "Алсеко"?
+        a: {{ getTranslation('alseco.mainMessage') }}
         buttons:
-            "Какие преимущества получит Ваша компания при работе с компанией АЛСЕКО?" -> /Alseco/Perks
-            "Расскажи о компании" -> /Alseco/Company
+            "{{ getTranslation('alseco.button1') }}" -> /Alseco/Perks
+            "{{ getTranslation('alseco.button2') }}" -> /Alseco/Company
             
     state: PreviousState
-        q: Назад
-        go!: /Start
+        q: $regexp<^(Назад|Артқа)$>
+        go!: /MainMenu/Init
 
     state: Perks
-        a: Главное преимущество, которое получит компания при работе с компанией АЛСЕКО - это увеличение собираемости платежей по оказываемым услугам для жителей.
+        a: {{ getTranslation('alseco.perks') }}
         
         state: PreviousState
-            q: Назад
+            q: $regexp<^(Назад|Артқа)$>
             go!: /Alseco/InitialState
             
     state: Company
         intent!: /WantsToKnowAboutAlseco
-        a: АО «АЛСЕКО» имеет большой опыт в оказании информационно-вычислительных услуг. Одним из основных направлений деятельности компании является формирование и печать счетов на государственном и русском языках для оплаты коммунальных и иных услуг, защита от несанкционированного доступа к счетам, организация доставки счетов, а также обработка информации о платежах потребителей. 
+        a: {{ getTranslation('alseco.about') }}
         
         state: PreviousState
-            q: Назад
+            q: $regexp<^(Назад|Артқа)$>
             go!: /Alseco/InitialState

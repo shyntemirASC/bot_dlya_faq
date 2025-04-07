@@ -13,14 +13,14 @@ theme: /
                 $context.response.replies.forEach(function(reply) {
                     if (reply.type === 'buttons') {
                         flag = true;
-                        reply.buttons.push({ "text": $context.session.language === 'kk' ? "Артқа" : "Назад"});
+                        reply.buttons.push({ "text": getTranslation('back') });
                     }
                 });
 
                 if (!flag) {
                     $context.response.replies.push({
                         "type": "buttons",
-                        "buttons": [ { "text": $context.session.language === 'kk' ? "Артқа" : "Назад" } ]
+                        "buttons": [ { "text": getTranslation('back') } ]
                     });
                 }   
             }        
@@ -37,8 +37,8 @@ theme: /
 
     state: NoMatch
         event!: noMatch
-        a: Извините Я не понял ваш запрос. Пожалуйста, выберите вопрос которому нужен ответ в меню ниже:
+        a: {{ getTranslation('noMatch.mainMessage') }}
         buttons:
-            "Алсеко" -> /Alseco/InitialState 
-            "Какие проекты имеются на данный момент?" -> /Projects/InitialState
+            "Алсеко" -> /Alseco/InitialState
+            "{{ getTranslation('mainMenu.projects')}}" -> /Projects/InitialState
 
