@@ -22,78 +22,7 @@
       "answerValidationThreshold" : 0.8
     }
   },
-  "intents" : [ {
-    "path" : "/WantsToKnowAboutAlseco",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "хочу узнать о алсеко"
-    }, {
-      "text" : "расскажи о алсеко"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/ChangeLanguage",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "Қазақша"
-    }, {
-      "text" : "Русский"
-    }, {
-      "text" : "қазақша"
-    }, {
-      "text" : "русский"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/WantsToAskAboutBot",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "хочу узнать про бота"
-    }, {
-      "text" : "расскажи о боте"
-    }, {
-      "text" : "информация о боте"
-    }, {
-      "text" : "расскажи о инаре"
-    }, {
-      "text" : "инара бот"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "slots" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/Back",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "Назад"
-    }, {
-      "text" : "Артқа"
-    }, {
-      "text" : "артқа"
-    }, {
-      "text" : "назад"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  } ],
+  "intents" : [{"id":145177,"path":"/WantsToKnowAboutAlseco","enabled":true,"shared":false,"phrases":[{"text":"хочу узнать о алсеко"},{"text":"расскажи о алсеко"}],"classificationRules":{"refs":[]},"patterns":[],"priority":0},{"id":145178,"path":"/ChangeLanguage","enabled":true,"shared":false,"phrases":[{"text":"Қазақша"},{"text":"Русский"},{"text":"қазақша"},{"text":"русский"},{"text":"казахский"},{"text":"орысша"}],"classificationRules":{"refs":[]},"patterns":[],"priority":0},{"id":145179,"path":"/WantsToAskAboutBot","enabled":true,"shared":false,"phrases":[{"text":"хочу узнать про бота"},{"text":"расскажи о боте"},{"text":"информация о боте"},{"text":"расскажи о инаре"},{"text":"инара бот"},{"text":"инара бот туралы айтып берші"},{"text":"инара туралы айтып берші"},{"text":"бот туралы айтып берші"},{"text":"бот туралы информация"},{"text":"инара туралы информация"}],"classificationRules":{"refs":[]},"patterns":[],"slots":[],"priority":0},{"id":145180,"path":"/Back","enabled":true,"shared":false,"phrases":[{"text":"Назад"},{"text":"Артқа"},{"text":"артқа"},{"text":"назад"}],"classificationRules":{"refs":[]},"patterns":[],"priority":0}],
   "entities" : [ ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
   "spellerDictionary" : [ ],

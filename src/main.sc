@@ -37,8 +37,30 @@ theme: /
 
     state: NoMatch
         event!: noMatch
-        a: {{ getTranslation('noMatch.mainMessage') }}
+        a: {{ getTranslation(noMatch.mainMessage) }}
         buttons:
             "Алсеко" -> /Alseco/InitialState
             "{{ getTranslation('mainMenu.projects')}}" -> /Projects/InitialState
+
+
+        #TEST интеграция ChatGPT
+        # script:
+        #     var userInput = $request.query
+        #     var response = $http.post("https://api.openai.com/v1/chat/completions", {
+        #         headers: {
+        #             "Authorization": "Bearer OPENAPIKEY",
+        #             "Content-Type": "application/json"
+        #         },
+        #         body: {
+        #             "model": "gpt-3.5-turbo",
+        #             "messages": [
+        #                 { "role": "system", "content": "Ты - вежливый помощник в корпоративном боте. Отвечай кратко и понятно." },
+        #                 { "role": "user", "content": userInput }
+        #             ]
+        #         }
+        #     });
+
+        #     $reactions.answer(toPrettyString(response));
+
+
 
