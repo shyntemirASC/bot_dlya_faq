@@ -9,13 +9,7 @@ language: ru
 nlp:
   engine: deep_learning
   lang: multilang
-
-  cnnSettings:
-    kernel_sizes: [1, 2]
-    n_filters: 512
-    emb_drp: 0.5
-    cnn_drp: 0.5
-    bs: 16
-    n_epochs: 7
-    lr: 0.001
-    pooling_name: max
+  intentNoMatchThresholds:
+    phrases: 0.2
+    patterns: 0.2
+  
