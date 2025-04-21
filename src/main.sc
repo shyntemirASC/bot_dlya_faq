@@ -43,7 +43,7 @@ theme: /
             }
             if ($session.userName) {
                 $reactions.answer("Тебя зовут " + name + "!");
-            } else {gi
+            } else {
                 $reactions.answer("Я пока не знаю твоё имя. Скажи, пожалуйста.");
             }
 
