@@ -26,6 +26,11 @@ theme: /
             }        
         });
 
+        script:
+        if ($request.payload && $request.payload.start && $request.payload.start.name) {
+            $session.userName = $request.payload.start.name;
+        }
+
   
     
     state: Start
@@ -38,15 +43,11 @@ theme: /
     state: AskName
         q!: как меня зовут
         script:
-            if ($request.payload && $request.payload.start && $request.payload.start.name) {
-                var name = $request.payload.start.name;
-            }
-            if (name) {
-                $reactions.answer("Тебя зовут " + name + "!");
+            if ($session.userName) {
+                $reactions.answer("Тебя зовут " + $session.userName + "!");
             } else {
                 $reactions.answer("Я пока не знаю твоё имя. Скажи, пожалуйста.");
             }
-
 
     state: NoMatch
         event!: noMatch
