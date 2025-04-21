@@ -26,15 +26,15 @@ theme: /
             }        
         });
 
-        script:
-            if ($request.payload && $request.payload.start && $request.payload.start.name) {
-                $session.userName = $request.payload.start.name;
-            }
 
   
     
     state: Start
         q!: $regex</start>
+        script:
+            if ($request.payload && $request.payload.start && $request.payload.start.name) {
+                $session.userName = $request.payload.start.name;
+            }
         a: Тілді тандаңыз/Пожалуйста, выберите язык
         buttons:
             "Русский" -> /Language/RU
@@ -48,7 +48,7 @@ theme: /
             } else {
                 $reactions.answer("Я пока не знаю твоё имя. Скажи, пожалуйста.");
             }
-b
+
     state: NoMatch
         event!: noMatch
         a: {{ getTranslation(noMatch.mainMessage) }}
