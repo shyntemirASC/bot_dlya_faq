@@ -31,10 +31,6 @@ theme: /
     
     state: Start
         q!: $regex</start>
-        script:
-            if ($request.payload && $request.payload.start && $request.payload.start.name) {
-                $session.userName = $request.payload.start.name;
-            }
         a: Тілді тандаңыз/Пожалуйста, выберите язык
         buttons:
             "Русский" -> /Language/RU
@@ -43,11 +39,13 @@ theme: /
     state: AskName
         q!: как меня зовут
         script:
-            if ($session.userName) {
-                $reactions.answer("Тебя зовут " + $session.userName + "!");
-            } else {
-                $reactions.answer("Я пока не знаю твоё имя. Скажи, пожалуйста.");
+            if ($parseTree.text.length > "/start".length) {
+                $session.startData = JSON.parse($parseTree.text.substr("/start".length + 1));
             }
+        if: $session.startData
+            a: Здравствуйте, {{$session.startData.name}}!
+        else:
+            a: Здравствуйте!
 
     state: NoMatch
         event!: noMatch
