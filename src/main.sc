@@ -27,9 +27,9 @@ theme: /
         });
 
         script:
-        if ($request.payload && $request.payload.start && $request.payload.start.name) {
-            $session.userName = $request.payload.start.name;
-        }
+            if ($request.payload && $request.payload.start && $request.payload.start.name) {
+                $session.userName = $request.payload.start.name;
+            }
 
   
     
@@ -48,7 +48,7 @@ theme: /
             } else {
                 $reactions.answer("Я пока не знаю твоё имя. Скажи, пожалуйста.");
             }
-
+b
     state: NoMatch
         event!: noMatch
         a: {{ getTranslation(noMatch.mainMessage) }}
