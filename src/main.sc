@@ -30,11 +30,15 @@ theme: /
   
     
     state: Start
-        q!: $regex</start>
-        a: Тілді тандаңыз/Пожалуйста, выберите язык
-        buttons:
-            "Русский" -> /Language/RU
-            "Қазақша" -> /Language/KK
+        q!: $regex</start> [$regex<\{.*\}>]
+        script:
+            if ($parseTree.text.length > "/start".length) {
+                $session.startData = JSON.parse($parseTree.text.substr("/start".length + 1));
+            }
+        if: $session.startData
+            a: Здравствуйте, {{$session.startData.name}}!
+        else:
+            a: Здравствуйте!
 
     state: AskName
         q!: как меня зовут
