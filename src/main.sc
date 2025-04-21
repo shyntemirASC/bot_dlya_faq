@@ -35,6 +35,19 @@ theme: /
             "Русский" -> /Language/RU
             "Қазақша" -> /Language/KK
 
+    state: AskName
+        q!: как меня зовут
+        script:
+            if ($request.payload && $request.payload.start && $request.payload.start.name) {
+                var name = $request.payload.start.name;
+            }
+            if ($session.userName) {
+                $reactions.answer("Тебя зовут " + name + "!");
+            } else {gi
+                $reactions.answer("Я пока не знаю твоё имя. Скажи, пожалуйста.");
+            }
+
+
     state: NoMatch
         event!: noMatch
         a: {{ getTranslation(noMatch.mainMessage) }}
