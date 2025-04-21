@@ -41,7 +41,7 @@ theme: /
             if ($request.payload && $request.payload.start && $request.payload.start.name) {
                 var name = $request.payload.start.name;
             }
-            if ($session.userName) {
+            if (name) {
                 $reactions.answer("Тебя зовут " + name + "!");
             } else {
                 $reactions.answer("Я пока не знаю твоё имя. Скажи, пожалуйста.");
