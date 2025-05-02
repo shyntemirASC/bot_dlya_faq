@@ -5,11 +5,8 @@ entryPoint: main.sc
 botEngine: v2
 language: ru
 
-
 nlp:
-  engine: deep_learning
-  lang: multilang
   intentNoMatchThresholds:
-    phrases: 0.2
-    patterns: 0.2
+    phrases: 0.25
+    patterns: 0.25
   
