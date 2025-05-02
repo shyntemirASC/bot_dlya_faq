@@ -10,18 +10,7 @@
     "classificationAlgorithm" : "deeplearning",
     "timezone" : "UTC+05:00",
     "extendedSettings" : {
-      "classificationAlgorithmVersion" : 1.0,
-      "cnnSettings" : {
-        "lang" : "ru",
-        "kernel_sizes" : [ 2, 3 ],
-        "n_filters" : 512,
-        "emb_drp" : 0.5,
-        "cnn_drp" : 0.5,
-        "bs" : 32,
-        "n_epochs" : 15,
-        "lr" : 0.001,
-        "pooling_name" : "max"
-      }
+      "classificationAlgorithmVersion" : 1.0
     },
     "shared" : false,
     "validation" : {

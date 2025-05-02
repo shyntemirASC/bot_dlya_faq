@@ -30,26 +30,11 @@ theme: /
   
     
     state: Start
-        q!: $regex</start> [$regex<\{.*\}>]
-        script:
-            if ($parseTree.text.length > "/start".length) {
-                $session.startData = JSON.parse($parseTree.text.substr("/start".length + 1));
-            }
-        if: $session.startData
-            a: Здравствуйте, {{$session.startData.name}}!
-        else:
-            a: Здравствуйте!
-
-    state: AskName
-        q!: как меня зовут
-        script:
-            if ($parseTree.text.length > "как меня зовут".length) {
-                $session.startData = JSON.parse($parseTree.text.substr("как меня зовут".length + 1));
-            }
-        if: $session.startData
-            a: Здравствуйте, {{$session.startData.name}}!
-        else:
-            a: Здравствуйте!
+        q!: $regex</start>
+        a: Тілді тандаңыз/Пожалуйста, выберите язык
+        buttons:
+            "Русский" -> /Language/RU
+            "Қазақша" -> /Language/KK
 
     state: NoMatch
         event!: noMatch

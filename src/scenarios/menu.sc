@@ -10,5 +10,3 @@ theme: /MainMenu
         intent!: /Back
         q: $regexp<^(Назад|Артқа)$>
         go!: /Start
-        
-    
